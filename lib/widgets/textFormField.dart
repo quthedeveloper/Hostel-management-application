@@ -1,29 +1,27 @@
+
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
+import '../helpers/colors.dart';
 
-
-
-
-class AppTextField extends StatelessWidget {
-  final String label;
-  final String? hint;
+class AppTextField extends StatefulWidget {
+  final String hint;
   final IconData? prefixIcon;
-  final IconData? suffixIcon;
+  final Color BorderColor;
   final bool obscureText;
   final TextInputType keyboardType;
   final TextEditingController? controller;
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
   final int maxLines;
-   // escape hatch for fully custom decoration
 
   const AppTextField({
     super.key,
-    required this.label,
-    this.hint,
+    required this.hint,
     this.prefixIcon,
-    this.suffixIcon,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
+    this.BorderColor = Colors.grey,
     this.controller,
     this.onChanged,
     this.validator,
@@ -31,29 +29,79 @@ class AppTextField extends StatelessWidget {
   });
 
   @override
+  State<AppTextField> createState() => _AppTextFieldState();
+}
+
+class _AppTextFieldState extends State<AppTextField> {
+  late bool _obscureText;
+
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = widget.obscureText;
+  }
+
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return TextFormField(
-      controller: controller,
-      obscureText: obscureText,
-      keyboardType: keyboardType,
-      maxLines: maxLines,
-      onChanged: onChanged,
-      validator: validator,
+      controller: widget.controller,
+      obscureText: _obscureText,
+      keyboardType: widget.keyboardType,
+      maxLines: widget.obscureText ? 1 : widget.maxLines,
+      onChanged: widget.onChanged,
+      validator: widget.validator,
+
       style: theme.textTheme.bodyMedium,
+
       decoration: InputDecoration(
-        labelText: label,
-        hintText: hint,
-        prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-        suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+        // Normal placeholder inside the field
+        hintText: widget.hint,
+
+        // No labelText, so nothing floats to the top
+
+        prefixIcon: widget.prefixIcon != null
+            ? Icon(widget.prefixIcon)
+            : null,
+
+        // Only show eye button for password fields
+        suffixIcon: widget.obscureText
+            ? IconButton(
+                icon: Icon(
+                  _obscureText
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _obscureText = !_obscureText;
+                  });
+                },
+              )
+            : null,
+
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Primary,
+          ),
+          borderRadius: BorderRadius.circular(12),
+        ),
+
         filled: true,
+
         fillColor: theme.colorScheme.surfaceVariant.withOpacity(0.3),
-        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 14,
+        ),
+
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
         ),
       ),
     );
   }
-}   
+}
+

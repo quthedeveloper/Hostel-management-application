@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'helpers/colors.dart';
+import 'pages/create_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Residential hostel App',
       theme: ThemeData(
+        scaffoldBackgroundColor: Light,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: Primary,
@@ -25,6 +28,10 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      initialRoute: '/',
+      routes: {
+        '/create-manager': (context) => const CreateManagerPage(),
+      },
       
     );
   }
