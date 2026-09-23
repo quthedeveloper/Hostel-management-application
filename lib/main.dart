@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-
+import 'helpers/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +14,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Residential hostel App',
       theme: ThemeData(
-        
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Primary,
+            foregroundColor: Light,
+            textStyle: const TextStyle(fontSize: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
       ),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      
     );
   }
 }
