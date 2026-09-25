@@ -22,7 +22,10 @@ class AppButton extends StatelessWidget{
     return ElevatedButton(
       onPressed: onPressed, 
       style : ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: verticalPadding)
+        
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: verticalPadding,),
+        
+        
       ),
       child: Text(text, 
       style: TextStyle(
