@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'helpers/colors.dart';
 import 'pages/create_manager.dart';
+import 'pages/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
+        '/':(context) => const WelcomePage(),
         '/create-manager': (context) => const CreateManagerPage(),
       },
       
