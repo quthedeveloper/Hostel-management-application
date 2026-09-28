@@ -17,6 +17,17 @@ class _CreateManagerPageState extends State<CreateManagerPage> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _hostelNameController = TextEditingController();
 
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _phoneController.dispose();
+    _hostelNameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     // String name = _nameController.text;

@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'helpers/colors.dart';
 import 'pages/create_manager.dart';
 import 'pages/welcome_page.dart';
+import 'pages/reset-password.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Light,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
+            elevation: 0,
             backgroundColor: Primary,
             foregroundColor: Light,
             textStyle: const TextStyle(fontSize: 16),
@@ -29,10 +31,12 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: '/',
+      initialRoute: '/reset-password',
       routes: {
         '/':(context) => const WelcomePage(),
         '/create-manager': (context) => const CreateManagerPage(),
+        '/reset-password': (context) => const ResetPasswordPage(),
+
       },
       
     );
