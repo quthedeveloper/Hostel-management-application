@@ -95,11 +95,10 @@ class WelcomePage extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(onPressed:() {
-                  // navigate to sign up page
+                  Navigator.pushNamed(context, '/role-selection');
                 },style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
-                
                  child: Text('Get Started',
                  style: TextStyle(
                   fontSize: 17
@@ -117,7 +116,7 @@ class WelcomePage extends StatelessWidget {
 
                 }, style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.white),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
                 
                 child: Text('Login',

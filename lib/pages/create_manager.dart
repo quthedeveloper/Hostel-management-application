@@ -40,15 +40,30 @@ class _CreateManagerPageState extends State<CreateManagerPage> {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(19.0),
+        padding: const EdgeInsets.fromLTRB(22, 16, 22, 22),
         child: SafeArea(
           child: SingleChildScrollView(
             child: 
           Column(
-        
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 16),
+              InkWell(
+                onTap: () => Navigator.of(context).maybePop(),
+                customBorder: const CircleBorder(),
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: AppColors.line),
+                  ),
+                  child: const Icon(Icons.arrow_back_ios_new_rounded,
+                      size: 16, color: AppColors.navy),
+                ),
+              ),
+
+              const SizedBox(height: 24),
+              
               const Text("Create Manager Account",
               style: TextStyle(
                 fontSize: 20,
@@ -125,12 +140,12 @@ class _CreateManagerPageState extends State<CreateManagerPage> {
                 onPressed: () {
                   // Handle create manager logic here
                 },
-                horizontalPadding: 124,
+                horizontalPadding: 120,
                 verticalPadding: 15,
                 Bold: true,
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

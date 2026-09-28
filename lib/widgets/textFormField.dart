@@ -21,7 +21,7 @@ class AppTextField extends StatefulWidget {
     this.prefixIcon,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
-    this.BorderColor = Colors.grey,
+    this.BorderColor = const Color.fromARGB(255, 222, 224, 226),
     this.controller,
     this.onChanged,
     this.validator,

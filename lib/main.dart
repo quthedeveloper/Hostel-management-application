@@ -3,6 +3,7 @@ import 'helpers/colors.dart';
 import 'pages/create_manager.dart';
 import 'pages/welcome_page.dart';
 import 'pages/reset-password.dart';
+import 'pages/role-selection.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         '/':(context) => const WelcomePage(),
         '/create-manager': (context) => const CreateManagerPage(),
         '/reset-password': (context) => const ResetPasswordPage(),
-
+        '/role-selection': (context) => const RoleSelectionScreen(),
       },
       
     );
