@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: '/reset-password',
+      initialRoute: '/',
       routes: {
         '/':(context) => const WelcomePage(),
         '/create-manager': (context) => const CreateManagerPage(),
