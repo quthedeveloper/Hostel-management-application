@@ -19,19 +19,25 @@ class AppButton extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed, 
-      style : ElevatedButton.styleFrom(
+    return SizedBox(
+      width: double.infinity,
+      height: 50,
+      child: ElevatedButton(
+        onPressed: onPressed, 
+        style : ElevatedButton.styleFrom(
+          
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: verticalPadding,
+          ),
+          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(45) ),
+        ),
+        child: Text(text, 
+        style: TextStyle(
+          fontSize: 16,
+        fontWeight: Bold ? FontWeight.bold : FontWeight.normal),
+        )),
+
         
-        padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: verticalPadding,),
-        
-        
-      ),
-      child: Text(text, 
-      style: TextStyle(
-        fontSize: 16,
-      fontWeight: Bold ? FontWeight.bold : FontWeight.normal),
-      ));
+    );
   }
 
 }

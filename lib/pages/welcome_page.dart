@@ -32,8 +32,10 @@ class WelcomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                  Image.asset('assets/logo/ca4771df2e21bd50fdd5d6759d21c7b3.jpg',
-                  height: 60,),
+                  Image.asset('assets/logo/ca4771df2e21bd50fdd5d6759d21c7b3.png',
+                  height: 80,
+                  width: 80,
+                  ),
 
                   SizedBox(width: 25,),
 
@@ -97,7 +99,7 @@ class WelcomePage extends StatelessWidget {
                 child: ElevatedButton(onPressed:() {
                   Navigator.pushNamed(context, '/role-selection');
                 },style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(45)),
                 ),
                  child: Text('Get Started',
                  style: TextStyle(
@@ -116,7 +118,7 @@ class WelcomePage extends StatelessWidget {
 
                 }, style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.white),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(45)),
                 ),
                 
                 child: Text('Login',
@@ -133,11 +135,7 @@ class WelcomePage extends StatelessWidget {
           ],
         ) ),
     ),     
-
-
-
-    )
-      
+    ),
     );
   }
 }

@@ -99,11 +99,11 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
                     backgroundColor: AppColors.orange,
                     foregroundColor: Colors.white,
                     disabledBackgroundColor:
-                        AppColors.orange.withOpacity(0.45),
+                        AppColors.orange.withValues(alpha: 0.45),
                     disabledForegroundColor: Colors.white,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)),
+                        borderRadius: BorderRadius.circular(45)),
                     textStyle: const TextStyle(
                         fontSize: 16, fontWeight: FontWeight.w600),
                   ),

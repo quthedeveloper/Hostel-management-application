@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'package:residence_app/pages/create_student.dart';
+import 'package:residence_app/pages/login_page.dart';
 import 'helpers/colors.dart';
 import 'pages/create_manager.dart';
 import 'pages/welcome_page.dart';
@@ -32,9 +34,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: '/',
+      initialRoute: '/create_student',
       routes: {
-        '/':(context) => const WelcomePage(),
+        '/':               (context) => const WelcomePage(),
+        '/login_page':     (context) => const LoginPage(),
+        '/create_student':  (context) => const CreateStudent(),
         '/create-manager': (context) => const CreateManagerPage(),
         '/reset-password': (context) => const ResetPasswordPage(),
         '/role-selection': (context) => const RoleSelectionScreen(),
