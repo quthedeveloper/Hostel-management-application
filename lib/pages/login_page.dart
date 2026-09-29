@@ -28,7 +28,11 @@ class _LoginPageState extends State<LoginPage> {
     
     super.dispose();
   }
+  @override
   Widget build(BuildContext context) {
+
+    bool _obscureText = true;
+    
     return Scaffold(
 
       body: Padding(padding: EdgeInsets.fromLTRB(22,16,22,22),
@@ -85,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
               AppTextField(
                 hint: 'enter password',
                 controller: _passwordController,
+                obscureText: _obscureText,
                 keyboardType: TextInputType.emailAddress,
                 prefixIcon: Icons.lock_outline,
               ),
