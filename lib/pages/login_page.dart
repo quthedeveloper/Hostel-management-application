@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import'package:flutter/material.dart';
 import '../widgets/textFormField.dart';
 import '../helpers/colors.dart';
@@ -32,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
 
     bool _obscureText = true;
-    
+
     return Scaffold(
 
       body: Padding(padding: EdgeInsets.fromLTRB(22,16,22,22),

@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: '/create_student',
+      initialRoute: '/',
       routes: {
         '/':               (context) => const WelcomePage(),
         '/login_page':     (context) => const LoginPage(),
