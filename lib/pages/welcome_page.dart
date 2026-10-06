@@ -114,8 +114,7 @@ class WelcomePage extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 child: OutlinedButton(onPressed:() {
-                 // navigate to login page
-
+                  Navigator.pushNamed(context, '/login_page');
                 }, style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.white),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(45)),

@@ -23,7 +23,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
     if (_selected == null) return;
     // Replace these with your real routes.
     final route = _selected == UserRole.student
-        ? '/student-registration'
+        ? '/create_student'
         : '/create-manager';
     Navigator.of(context).pushNamed(route);
   }
@@ -115,7 +115,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
 
               Center(
                 child: GestureDetector(
-                  onTap: () => Navigator.of(context).pushNamed('/login'),
+                  onTap: () => Navigator.of(context).pushNamed('/login_page'),
                   child: const Text.rich(
                     TextSpan(
                       text: 'Already have an account? ',

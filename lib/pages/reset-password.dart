@@ -78,7 +78,7 @@ final TextEditingController _emailController = TextEditingController();
                   const Text("Remember your password?"),
                   TextButton(
                     onPressed: () {
-                      // Handle navigation to login page
+                      Navigator.pushNamed(context, '/login_page');
                     },
                     child: Text("Login",
                       style: TextStyle(

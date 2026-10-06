@@ -183,7 +183,7 @@ bool _obscureText = true;
                   const Text("Already have an account?"),
                   TextButton(
                     onPressed: () {
-                      // Handle navigation to login page
+                      Navigator.pushNamed(context, '/login_page');
                     },
                     child: Text("Login",
                       style: TextStyle(

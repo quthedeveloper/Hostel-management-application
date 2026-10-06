@@ -41,21 +41,21 @@ class _LoginPageState extends State<LoginPage> {
              crossAxisAlignment:CrossAxisAlignment.start,
             // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              // InkWell(
-              //   onTap: () => Navigator.of(context).maybePop(),
-              //   customBorder: const CircleBorder(),
-              //   child: Container(
-              //     width: 40,
-              //     height: 40,
-              //     decoration: BoxDecoration(
-              //       shape: BoxShape.circle,
-              //       border: Border.all(color: AppColors.line),
-              //     ),
-              //     child: const Icon(Icons.arrow_back_ios_new_rounded,
-              //         size: 16, color: AppColors.navy),
-              //   ),
-              // ),
-              // const SizedBox(height: 24,),
+              InkWell(
+                onTap: () => Navigator.of(context).maybePop(),
+                customBorder: const CircleBorder(),
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: AppColors.line),
+                  ),
+                  child: const Icon(Icons.arrow_back_ios_new_rounded,
+                      size: 16, color: AppColors.navy),
+                ),
+              ),
+              const SizedBox(height: 24,),
 
               const Text('Welcome Back',
               style: TextStyle(
@@ -76,16 +76,16 @@ class _LoginPageState extends State<LoginPage> {
 
               Label(text: 'Email Address', fontSize:15),
               AppTextField(
-                hint: 'enter your email',
+                hint: 'Enter your email',
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 prefixIcon: Icons.email_outlined,
               ),
 
               const SizedBox(height: 24,),
-              Label(text: 'password', fontSize:15),
+              Label(text: 'Password', fontSize:15),
               AppTextField(
-                hint: 'enter password',
+                hint: 'Enter password',
                 controller: _passwordController,
                 obscureText: _obscureText,
                 keyboardType: TextInputType.emailAddress,
@@ -99,10 +99,9 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(onPressed: (){
-
-                    // navigates to forgotten password page 
+                    Navigator.pushNamed(context, '/reset-password');
                   },
-                   child: Text('fogotten password ?',
+                   child: Text('Forgotten password ?',
                    style: TextStyle(color: Primary),
                    ),
                    )
@@ -110,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
               ),),
 
 
-               const SizedBox(height: 50,),
+               const SizedBox(height: 20,),
 
               AppButton(text: 'login',
               onPressed: () {
@@ -215,10 +214,9 @@ class _LoginPageState extends State<LoginPage> {
 
                     TextButton(
                       onPressed: (){
-
-                        // navigates to the create student account / create manager page
+                        Navigator.pushNamed(context, '/role-selection');
                       },
-                       child: Text('Register',
+                       child: Text('Click here',
                        style: TextStyle(
                         color: Primary,
                        ),),
