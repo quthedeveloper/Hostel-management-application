@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:residence_app/pages/create_student.dart';
 import 'package:residence_app/pages/login_page.dart';
+import 'package:residence_app/pages/student_dashboard.dart';
 import 'helpers/colors.dart';
 import 'pages/create_manager.dart';
 import 'pages/welcome_page.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/create-manager': (context) => const CreateManagerPage(),
         '/reset-password': (context) => const ResetPasswordPage(),
         '/role-selection': (context) => const RoleSelectionScreen(),
+        '/student_dashboard': (context) => const StudentDashboard(),
       },
       
     );
